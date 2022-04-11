@@ -133,7 +133,7 @@ h1 {
     cursor: pointer;
     margin: 10px;
     height: 4px;
-    width: 80%;
+    width: 70%;
   }
   
   .progress {
@@ -144,14 +144,11 @@ h1 {
     transition: width 0.1s linear;
   }
   
-  .sliders .volume-slider {
+.sliders .volume_slider {
     margin: 30px 10px;
-    width: 80%;
-  }
-
-.volume_slider {
-    width: 60%;
+    width: 50%;
 }
+
 
 i.fa-volume-down,
 i.fa-volume-up {

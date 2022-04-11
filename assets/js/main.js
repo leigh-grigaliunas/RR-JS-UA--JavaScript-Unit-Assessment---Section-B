@@ -33,8 +33,11 @@ loadSong(songs[0]);
 // Update song details
 function loadSong(song) {
     title.innerText = song;
+    // artist.innerText = artist;
+    
     audio.src = `assets/music/${song}.mp3`;
     artwork.src = `assets/img/${song}.jpeg`;
+
 }
 
 // Play song
