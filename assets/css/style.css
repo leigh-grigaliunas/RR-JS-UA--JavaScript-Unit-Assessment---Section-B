@@ -30,7 +30,9 @@ h1 {
     margin-bottom: 10px;
     font-weight: bold;
 }
-    
+.music-player{
+  min-width: 600px;
+}
 
 .music-info {
     height: 200px;
@@ -62,30 +64,11 @@ h1 {
 
 .music-artwork img{
     border-radius: 50%;
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
     animation: rotate 3s linear infinite;
     animation-play-state: paused;
 }
-
-.music-container.play-pause-btn .img-container img {
-    animation-play-state: running;
-}
-  
-  @keyframes rotate {
-    from {
-      transform: rotate(0deg);
-    }
-  
-    to {
-      transform: rotate(360deg);
-    }
-}
-
-.music-container.play-pause-btn {
-    opacity: 1;
-    transform: translateY(-100%);
-  }
 
 .music-transports{
     height: 100px;
@@ -103,6 +86,9 @@ h1 {
     cursor: pointer;
     padding: 10px;
     margin: 0 20px;
+}
+.music-transport-btn:focus {
+  outline: 0;
 }
 
 .music-transport-btn i{
@@ -149,8 +135,31 @@ h1 {
     width: 50%;
 }
 
-
 i.fa-volume-down,
 i.fa-volume-up {
   padding: 10px;
+}
+
+.music-artwork img {
+  border-radius: 50%;
+  object-fit: cover;
+  height: 110px;
+  width: 110px;
+  animation: rotate 3s linear infinite;
+
+  animation-play-state: paused;
+}
+
+.music-player.play .music-artwork img {
+  animation-play-state: running;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }

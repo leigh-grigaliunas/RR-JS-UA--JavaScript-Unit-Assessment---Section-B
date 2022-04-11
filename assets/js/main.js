@@ -1,73 +1,88 @@
-
- 
-
-// const ukulele = new musicTrack('Ben Sound','Ukulele','2:34');
-// const betterdays = new musicTrack('Ben Sound','Better Days','2:26');
-// const sunny = new musicTrack('Ben Sound','Sunny','2:20');
-
 const musicContainer = document.getElementById('music-player');
-const playBtn = document.getElementById('play-pause-btn');
-const prevBtn = document.getElementById('skip-forward-btn');
-const nextBtn = document.getElementById('skip-back-btn');
-let audio = document.getElementById('audio');
-let volume_slider = document.querySelector(".volume_slider");
-
+const playBtn = document.getElementById('play');
+const prevBtn = document.getElementById('next');
+const nextBtn = document.getElementById('prev');
+const audio = document.getElementById('audio');
+let volume_slider = document.querySelector('volume_slider');
 const progress = document.getElementById('progress');
 const progressContainer = document.getElementById('progress-container');
-
 const title = document.getElementById('title');
 const artist = document.getElementById('artist');
 const duration = document.getElementById('duration');
 const artwork = document.getElementById('music-artwork');
-
-
 const currTime = document.querySelector('#currTime');
 const durTime = document.querySelector('#durTime');
 
+const tracks = [
+    {
+        title: 'Ukulele',
+        artist: 'Ben Sounds',
+        length: '2:34',
+        musicFile: 'ukulele.mp3',
+        artFile: 'ukulele.jpeg',
+        bgColor: '#daa0b2'
+    },
+    {
+        title: 'Better Days',
+        artist: 'Ben Sounds',
+        length: '2:26',
+        musicFile: 'betterdays.mp3',
+        artFile: 'betterdays.jpeg',
+        bgColor: '#eb5e82'
+    },
+    {
+        title: 'Sunny',
+        artist: 'Ben Sounds',
+        length: '2:20',
+        musicFile: 'sunny.mp3',
+        artFile: 'sunny.jpeg',
+        bgColor: '#736bf9'
+    }
+];
 
-const songs = ['ukulele', 'betterdays', 'sunny'];
 let songIndex = 0;
-
-loadSong(songs[0]);
+loadSong(tracks[songIndex]);
 
 // Update song details
 function loadSong(song) {
-    title.innerText = song;
-    // artist.innerText = artist;
+    title.innerText = song.title;
+    artist.innerText = song.artist;
+    duration.innerText = song.length;
+    audio.src = `assets/music/${song.musicFile}`;
+    artwork.src = `assets/img/${song.artFile}`;
     
-    audio.src = `assets/music/${song}.mp3`;
-    artwork.src = `assets/img/${song}.jpeg`;
+    let myElements = document.querySelectorAll(".box");
 
+    for (let i = 0; i < myElements.length; i++) {
+	    myElements[i].style.background = song.bgColor;
+    }
 }
 
 // Play song
 function playSong() {
-    musicContainer.classList.add('play-pause-btn');
+    musicContainer.classList.add('play');
     playBtn.querySelector('i.fas').classList.remove('fa-play');
     playBtn.querySelector('i.fas').classList.add('fa-pause');
-  
     audio.play();
 }
 
 // Pause song
 function pauseSong() {
-    musicContainer.classList.remove('play-pause-btn');
+    musicContainer.classList.remove('play');
     playBtn.querySelector('i.fas').classList.add('fa-play');
     playBtn.querySelector('i.fas').classList.remove('fa-pause');
-  
     audio.pause();
-  }
+}
 
-  // Previous song
+// Previous song
 function prevSong() {
     songIndex--;
 
     if (songIndex < 0) {
-        songIndex = songs.length - 1;
+        songIndex = tracks.length - 1;
     }
-
-    loadSong(songs[songIndex]);
-
+    
+    loadSong(tracks[songIndex]);
     playSong();
 }
 
@@ -75,12 +90,11 @@ function prevSong() {
 function nextSong() {
     songIndex++;
 
-    if (songIndex > songs.length - 1) {
+    if (songIndex > tracks.length - 1) {
         songIndex = 0;
     }
 
-    loadSong(songs[songIndex]);
-
+    loadSong(tracks[songIndex]);
     playSong();
 }
 
@@ -168,10 +182,9 @@ function setVolume() {
     audio.volume = volume_slider.value / 100;
 }
 
-
 // Event listeners
 playBtn.addEventListener('click', () => {
-    const isPlaying = musicContainer.classList.contains('play-pause-btn');
+    const isPlaying = musicContainer.classList.contains('play');
 
     if (isPlaying) {
       pauseSong();
