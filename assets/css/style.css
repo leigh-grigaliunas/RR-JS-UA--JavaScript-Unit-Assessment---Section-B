@@ -1,0 +1,109 @@
+* {
+    /* font-family: "Roboto Mono", monospace; */
+    font-weight: 400;
+    color: #212121;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    word-wrap: break-word; 
+}
+
+h1 {
+    font-size: 3rem; }
+  
+  h2 {
+    font-size: 2.6rem; }
+  
+  h3 {
+    font-size: 2.2rem; }
+  
+  h4 {
+    font-size: 1.8rem; }
+  
+  h5 {
+    font-size: 1.6rem; }
+  
+  h6 {
+    font-size: 1.4rem; }
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+    
+
+.music-info {
+    height: 200px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    text-transform: capitalize;
+}
+
+.music-info h2, .music-info h4{
+    color: white;
+}
+
+.music-info h4 {
+    font-weight: 100;
+}
+
+.music-artwork{
+    height: 200px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.music-artwork img{
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    animation: rotate 3s linear infinite;
+    animation-play-state: paused;
+}
+
+.music-transports{
+    height: 100px;
+    padding: 20px 0 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+} 
+
+.music-transport-btn{
+    background-color: transparent;
+    border: 0;
+    font-size: 30px;    
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 20px;
+}
+
+.music-transport-btn i{
+    color: white;
+}
+
+.sliders{
+    height: 200px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1; 
+}
+
+.volume-slider i, .seek-slider i{
+    color: white;
+}
+
+.box {
+    border: none !important;
+}

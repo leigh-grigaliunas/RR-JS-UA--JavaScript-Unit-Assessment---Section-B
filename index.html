@@ -1,0 +1,99 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/index.css">
+  <link rel="stylesheet" href="assets/css/flexboxgrid.css">
+
+  <script src="https://kit.fontawesome.com/2db9c313b1.js" crossorigin="anonymous"></script>
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="page-section">
+            <h1 class="center-xs">Music Player Assessment</h1>
+        </section>  
+        <section class="page-section">
+            <div class="music-player" id="music-player">
+                <audio src="assets/music/ukulele.mp3" id="audio"></audio>
+                <div class="row center-xs">
+                    <div class="col-xs-6">
+                        <div class="box music-info" id="music-info">
+                            <h2>Now Playing</h2>
+                            <br>
+                            <h3 id="title">ukulele</h3>
+                            <h4 id="artist">Ben Sounds</h4>
+                        </div>
+                    </div> 
+                </div>
+                <div class="row center-xs">
+                    <div class="col-xs-6">
+                        <div class="box music-artwork">
+                            <img src="assets/img/ukulele.jpeg" id="music-artwork">
+                        </div>
+                    </div> 
+                </div>
+                <div class="row center-xs">
+                    <div class="col-xs-6">
+                        <div class="box music-transports" id="music-transports">
+                            <button class="music-transport-btn" id="skip-back-btn">
+                                <i class="fas fa-backward"></i>
+                            </button>
+                            <button class="music-transport-btn" id="play-pause-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <button class="music-transport-btn" id="skip-forward-btn">
+                                <i class="fas fa-forward"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row center-xs">
+                    <div class="col-xs-6">
+                        <div class="box sliders">
+                            <div class="seek-slider" id="seek-slider">
+                                <div class="current-time">00:00</div>
+                                <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+                                <div class="total-duration">00:00</div>
+                            </div>
+                            <div class="volume-slider" id="volume-slider">
+                                    <i class="fa fa-volume-down"></i>
+                                    <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+                                    <i class="fa fa-volume-up"></i>
+                            </div>
+                        </div> 
+                    </div> 
+                </div>
+            </div>
+        </section>
+    </div>
+
+  <!-- Add your site or application content here -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>
