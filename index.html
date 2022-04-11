@@ -40,6 +40,7 @@
                             <br>
                             <h3 id="title">ukulele</h3>
                             <h4 id="artist">Ben Sounds</h4>
+                            <!-- <h4 id="duration">02:00</h4> -->
                         </div>
                     </div> 
                 </div>
@@ -68,10 +69,8 @@
                 <div class="row center-xs">
                     <div class="col-xs-6">
                         <div class="box sliders">
-                            <div class="seek-slider" id="seek-slider">
-                                <div class="current-time">00:00</div>
-                                <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
-                                <div class="total-duration">00:00</div>
+                            <div class="progress-container" id="progress-container">
+                                <div class="progress" id="progress"></div>
                             </div>
                             <div class="volume-slider" id="volume-slider">
                                     <i class="fa fa-volume-down"></i>

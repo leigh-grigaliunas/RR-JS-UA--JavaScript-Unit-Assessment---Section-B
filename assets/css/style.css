@@ -68,6 +68,25 @@ h1 {
     animation-play-state: paused;
 }
 
+.music-container.play-pause-btn .img-container img {
+    animation-play-state: running;
+}
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+}
+
+.music-container.play-pause-btn {
+    opacity: 1;
+    transform: translateY(-100%);
+  }
+
 .music-transports{
     height: 100px;
     padding: 20px 0 10px 0;
@@ -106,4 +125,35 @@ h1 {
 
 .box {
     border: none !important;
+}
+
+.progress-container {
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    height: 4px;
+    width: 80%;
+  }
+  
+  .progress {
+    background-color: #1373f9;
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+  }
+  
+  .sliders .volume-slider {
+    margin: 30px 10px;
+    width: 80%;
+  }
+
+.volume_slider {
+    width: 60%;
+}
+
+i.fa-volume-down,
+i.fa-volume-up {
+  padding: 10px;
 }

@@ -1,3 +1,6 @@
+
+ 
+
 // const ukulele = new musicTrack('Ben Sound','Ukulele','2:34');
 // const betterdays = new musicTrack('Ben Sound','Better Days','2:26');
 // const sunny = new musicTrack('Ben Sound','Sunny','2:20');
@@ -6,24 +9,26 @@ const musicContainer = document.getElementById('music-player');
 const playBtn = document.getElementById('play-pause-btn');
 const prevBtn = document.getElementById('skip-forward-btn');
 const nextBtn = document.getElementById('skip-back-btn');
-const audio = document.getElementById('audio');
+let audio = document.getElementById('audio');
+let volume_slider = document.querySelector(".volume_slider");
 
-const progress = document.getElementById('seek-slider');
-const volume = document.getElementById('volume-slider');
+const progress = document.getElementById('progress');
+const progressContainer = document.getElementById('progress-container');
 
-const progressContainer = document.getElementById('sliders');
 const title = document.getElementById('title');
 const artist = document.getElementById('artist');
+const duration = document.getElementById('duration');
 const artwork = document.getElementById('music-artwork');
+
 
 const currTime = document.querySelector('#currTime');
 const durTime = document.querySelector('#durTime');
 
 
-const songs = ['ukulele', 'betterdays', 'sunny', ];
+const songs = ['ukulele', 'betterdays', 'sunny'];
 let songIndex = 0;
 
-loadSong(songs[songIndex]);
+loadSong(songs[0]);
 
 // Update song details
 function loadSong(song) {
@@ -151,15 +156,20 @@ function updateProgress(e) {
       get_sec_d (duration);
   
       // change duration DOM
-      durTime.innerHTML = min_d +':'+ sec_d;
-          
+      durTime.innerHTML = min_d +':'+ sec_d;   
 };
+
+function setVolume() {
+    // Set the volume according to the
+    // percentage of the volume slider set
+    audio.volume = volume_slider.value / 100;
+}
 
 
 // Event listeners
 playBtn.addEventListener('click', () => {
     const isPlaying = musicContainer.classList.contains('play-pause-btn');
-  
+
     if (isPlaying) {
       pauseSong();
     } else {
